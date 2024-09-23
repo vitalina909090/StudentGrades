@@ -1,24 +1,29 @@
 #pragma once
+#include <cstring>
+
 class Student
 {
 private:
-    char name[20];
-    int marks[3];
-    char date[15];
-    char telephone[20];
-    char city[20];
-    char country[20];
-    char academy[20];
-    char academy_city_country[20];
+    char* name;                            
+    int* marks;                            
+    char* date;                            
+    char* telephone;                       
+    char* city;                            
+    char* country;                         
+    char* academy;                         
+    char* academy_city_country;            
     int number;
+    int marksCount;                       
 
 public:
+    Student(int* marksArray, int count, const char* studentName, const char* studentDate, const char* studentTelephone, const char* studentCity, const char* studentCountry, const char* Academy, const char* Academy_city_country, int Number);
+    ~Student();                            
+
     float getAver();
     void setMark(int mark, int index);
     int getMark(int index);
     void setName(const char* studentName);
     const char* getName();
-    Student(int mark[3], const char* studentName, const char* studentDate, const char* studentTelephone, const char* studentCity, const char* studentCountry, const char* Academy, const char* Academy_city_country, int Number);
 
     void setDate(const char* studentDate);
     const char* getDate();
@@ -43,5 +48,7 @@ public:
 
     void print();
 
-};
+    Student(Student&& object);
 
+    Student& operator=(const Student& object);
+};
