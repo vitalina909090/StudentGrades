@@ -4,51 +4,45 @@
 class Student
 {
 private:
-    char* name;                            
-    int* marks;                            
-    char* date;                            
-    char* telephone;                       
-    char* city;                            
-    char* country;                         
-    char* academy;                         
-    char* academy_city_country;            
+    char* name;
+    int* marks;
+    char* date;
+    char* telephone;
+    char* city;
+    char* country;
+    char* academy;
+    char* academy_city_country;
     int number;
-    int marksCount;                       
+    int marksCount;
 
 public:
     Student(int* marksArray, int count, const char* studentName, const char* studentDate, const char* studentTelephone, const char* studentCity, const char* studentCountry, const char* Academy, const char* Academy_city_country, int Number);
-    ~Student();                            
+    ~Student();
+
+    Student(const Student& other);
+    Student& operator=(const Student& other);
 
     float getAver();
-    void setMark(int mark, int index);
     int getMark(int index);
-    void setName(const char* studentName);
+    void setMark(int mark, int index);
     const char* getName();
-
-    void setDate(const char* studentDate);
+    void setName(const char* studentName);
     const char* getDate();
-
-    void setTelephone(const char* studentTelephone);
+    void setDate(const char* studentDate);
     const char* getTelephone();
-
-    void setCity(const char* studentCity);
+    void setTelephone(const char* studentTelephone);
     const char* getCity();
-
-    void setCountry(const char* studentCountry);
+    void setCity(const char* studentCity);
     const char* getCountry();
-
-    void setAcademy(const char* Academy);
+    void setCountry(const char* studentCountry);
     const char* getAcademy();
-
-    void setAcademy_city_country(const char* Academy_city_country);
+    void setAcademy(const char* Academy);
     const char* getAcademy_city_country();
-
-    void setNumber(int Number);
+    void setAcademy_city_country(const char* Academy_city_country);
     int getNumber();
-
+    void setNumber(int Number);
     void print();
 
-    Student(Student&& object);
-
-    Student& operator=(const Student& object);
+    Student(Student&& other);
+    Student& operator=(Student&& other);
 };

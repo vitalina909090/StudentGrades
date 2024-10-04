@@ -12,14 +12,17 @@ int main()
 
     int marks[] = { 10, 8, 9 };
     int count = sizeof(marks) / sizeof(marks[0]);
-    Student stdnt(marks, count, "Легеза В.А.", "09/12/2006", "966121562", "Запорожье", "Украина", "ШАГ", "Запорожье/Украина", 34);
 
-    cout << stdnt.getName() << "  ";
+    Student stdnt1(marks, count, "Легеза В.А.", "09/12/2006", "966121562", "Запорожье", "Украина", "ШАГ", "Запорожье/Украина", 34);
+
+    Student stdnt2 = stdnt1;
+
+    cout << stdnt2.getName() << "  ";
     for (int i = 0; i < count; ++i) {
-        cout << stdnt.getMark(i) << "  ";
+        cout << stdnt2.getMark(i) << "  ";
     }
-    cout << "\n" << stdnt.getAver() << "\n";
-    stdnt.print();
+    cout << "\n" << stdnt2.getAver() << "\n";
+    stdnt2.print();
 
     return 0;
 }
